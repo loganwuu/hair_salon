@@ -8,17 +8,22 @@
 
 This application allows salon owners to input their stylists and their corresponding clients. The ```stylists``` and ```clients``` tables are stored in the ```hair_salon``` MySQL database.
 
-## Setup Instruction
+## Setup
+
 * Clone the project using the link provided on Github.
 * Run composer install in Terminal from the project root folder.
 * Start the PHP server from Terminal in the /web folder.
 * Open a web browser and navigate to "localhost:8000".
 
-## MySQL Commands Used
+### How to Setup Database on MySQL
+
 * ```CREATE DATABASE hair_salon;```
 * ```USE hair_salon;```
 * ```CREATE TABLE stylists (name VARCHAR(255), id serial PRIMARY KEY);```
 * ```CREATE TABLE clients (name VARCHAR(255), id serial PRIMARY KEY, stylist_id INT);```
+
+## Known bugs
+Not able to edit and update Client info so far.
 
 ## Technologies Used
 

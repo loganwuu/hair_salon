@@ -58,7 +58,7 @@
     });
 
     // Stylist page
-        // After running update a stylist name function
+        // After updating a stylist name function
     $app->patch("/stylists/{id}", function($id) use ($app) {
         $name = $_POST['name'];
         $stylist = Stylist::find($id);
@@ -66,7 +66,17 @@
         return $app['twig']->render('stylist.html.twig', array('stylist' => $stylist, 'clients'=> $stylist->getClients()));
     });
 
-        // After finding the id of a stylist function
+        // After updating a client name function
+    $app->patch("/clients/{id}", function($id) use ($app) {
+        $name = $_POST['name'];
+        $client = Client::find($id);
+        $client->update($name);
+        $client->save();
+        $stylist = Stylist::find($stylist_id);
+        return $app['twig']->render('stylist.html.twig', array('stylist' => $stylist, 'clients'=> $stylist->getClients()));
+    });
+
+        // After running the seaching for id of a stylist function
     $app->get("/stylists/{id}", function($id) use ($app) {
         $stylist = Stylist::find($id);
         return $app['twig']->render('stylist.html.twig', array('stylist' => $stylist, 'clients' => $stylist->getClients()));
@@ -83,9 +93,16 @@
     });
 
     // Stylist name edit page
+    $app->get("/stylists/{id}/edit", function($id) use ($app) {
+        $stylist = Stylist::find($id);
+        return $app['twig']->render('stylist_edit.html.twig', array('stylist' => $stylist));
+    });
+
     // Client name edit page
-
-
+    $app->get("/clients/{id}/edit", function($id) use ($app) {
+        $client = Client::find($id);
+        return $app['twig']->render('client_edit.html.twig', array('client' => $client));
+    });
 
     return $app;
 ?>

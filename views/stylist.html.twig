@@ -1,23 +1,22 @@
 <html>
     <head>
-        <title>Best Restaurants</title>
+        <title>Logan's Hair Salon</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     </head>
     <body>
         <div class="container">
             <div class="jumbotron">
-                <h1>
-                    {{ stylist.getName }}<br>
+                <h1>{{ stylist.getName }}<br>
                     <small>stylist</small>
                 </h1>
             </div>
 
             {% if clients is not empty %}
-            <h2><small>Clients:</small></h2>
+            <h1><small>Client(s):</small></h1>
               {% for client in clients|sort %}
                   <ul>
-                      <li>{{ client.getName }}
-                          <a href="/restaurants/{{ restaurant.getId }}"><span class="label label-warning" > Edit</span></a>
+                      <li><h5><a href="/client/{{ client.getId }}">{{ client.getName }}</a>
+                        </h5>
                       </li>
                   </ul>
               {% endfor %}
@@ -27,7 +26,7 @@
 
             <hr noshade size=4 width=100% align=left>
 
-            <h1><small>Add a Client</small></h1>
+            <h1><small>Add a New Client</small></h1>
             <form action="/clients" method="post">
                 <div class='form-group'>
                     <input id="stylist_id" type="hidden" name="stylist_id" value="{{ stylist.getId() }}">

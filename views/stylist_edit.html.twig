@@ -1,24 +1,24 @@
 <html>
     <head>
-        <title>Hair Salon</title>
+        <title>Logan's Hair Salon</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     </head>
     <body>
         <div class="container">
-            <h1>Update the '{{ client.getName }}' client </h1>
+            <h1>Update {{ stylist.getName }}</h1>
 
-            <form action="/clients/{{ client.getId }}" method="post">
+            <form action="/stylists/{{ stylist.getId }}" method="post">
                 <input name="_method" type="hidden" value="patch">
 
-                <label for="name">Rename the client:</label>
+                <label for="name">New Name:</label>
                 <input id="name" name="name" type="text">
 
                 <button type="submit" class="btn btn-default">Update</button>
             </form>
 
-            <form action="/clients/{{ client.getId }}" method="post">
+            <form action="/stylists/{{ stylist.getId }}" method="post">
                 <input name="_method" type="hidden" value="delete">
-                <button type="submit" class="btn btn-danger">Delete client</button>
+                <button type="submit" class="btn btn-danger">Delete {{ stylist.getName }}</button>
             </form>
         </div>
     </body>
