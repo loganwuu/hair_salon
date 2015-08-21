@@ -142,18 +142,20 @@
 
             $test_stylist_id = $test_stylist->getId();
 
-                //clients
+                //client1
             $name = "John";
             $test_client = new Client($name, $id, $test_stylist_id);
             $test_client->save();
 
+                //client2
             $name2 = "Diane";
             $test_client2 = new Client($name2, $id, $test_stylist_id);
-            $test_client2->save()
+            $test_client2->save();
 
             //Act
-            $result = $test_stylist->getStylists();
+            $result = $test_stylist->getClients();
 
+            //Assert
             $this->assertEquals([$test_client, $test_client2], $result);
         }
 
@@ -176,7 +178,7 @@
             $test_stylist->delete();
 
             //Assert
-            $this->assertEquals([], Clients::getAll());
+            $this->assertEquals([], Client::getAll());
         }
     }
 ?>

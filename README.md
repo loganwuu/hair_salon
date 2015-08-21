@@ -18,7 +18,7 @@ This application allows salon owners to input their stylists and their correspon
 * CREATE DATABASE hair_salon;
 * USE hair_salon;
 * CREATE TABLE stylists (name VARCHAR(255), id serial PRIMARY KEY);
-* CREATE TABLE clients (name VARCHAR(255), id serial PRIMARY KEY);
+* CREATE TABLE clients (name VARCHAR(255), id serial PRIMARY KEY, stylist_id INT);
 
 ## Technologies Used
 

@@ -4,7 +4,7 @@
     * @backupStaticAttributes disabled
     */
 
-    require_once "src/client.php";
+    require_once "src/Stylist.php";
     require_once "src/Client.php";
 
     $server = 'mysql:host=localhost;dbname=hair_salon_test';
@@ -77,9 +77,9 @@
             $name = "John";
             $stylist_id = $test_stylist->getId();
             $test_client = new Client($name, $id, $stylist_id);
-            $test_client->save();
 
             //Act
+            $test_client->save();
             $result = Client::getAll();
 
             //Assert
