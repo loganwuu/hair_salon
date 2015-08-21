@@ -6,6 +6,7 @@
     */
 
     require_once "src/Stylist.php";
+    require_once "src/Client.php";
 
     $server = 'mysql:host=localhost;dbname=hair_salon_test';
     $username = 'root';
@@ -116,7 +117,7 @@
         {
             //Arrange
             $name = "Ben";
-            $name2 = "Jens";
+            $name2 = "Jen";
             $id = null;
             $test_stylist = new Stylist($name, $id);
             $test_stylist->save();
