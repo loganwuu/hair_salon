@@ -23,7 +23,7 @@ This application allows salon owners to input their stylists and their correspon
 * ```CREATE TABLE clients (name VARCHAR(255), id serial PRIMARY KEY, stylist_id INT);```
 
 ## Known bug
-Not able to edit and update Client info so far.
+Not able to edit and update Client info as of now.
 
 ## Technologies Used
 
