@@ -1,20 +1,20 @@
 # Hair Salon
 
-##### The application allows salon owners to add a list of their stylists and clients who see that stylist. The stylists work independently, so each client only belongs to a single stylist. (8/21/15)
+##### The application allows salon owners to add a list of their stylists and clients who see that stylist. Each client only belongs to a single stylist since stylists work individually. (8/21/15)
 
-#### Logan Wu
+#### By Logan Wu
 
 ## Description
 
-This application allows salon owners to input their stylists and their corresponding clients. The stylists and clients tables are stored in the hair_salon MySQL database.
+This application allows salon owners to input their stylists and their corresponding clients. The ```stylists``` and ```clients``` tables are stored in the ```hair_salon``` MySQL database.
 
-## Setup
+## Setup Instruction
 * Clone the project using the link provided on Github.
 * Run composer install in Terminal from the project root folder.
 * Start the PHP server from Terminal in the /web folder.
 * Open a web browser and navigate to "localhost:8000".
 
-## MySQL Commands used
+## MySQL Commands Used
 * ```CREATE DATABASE hair_salon;```
 * ```USE hair_salon;```
 * ```CREATE TABLE stylists (name VARCHAR(255), id serial PRIMARY KEY);```
@@ -26,7 +26,7 @@ PHP, PHPUnit, Silex, Twig, and MySQL
 
 ### Legal
 
-Copyright (c) 2015 Logan Wu
+Copyright (c) 2015 **Logan Wu**
 
 This software is licensed under the MIT license.
 
