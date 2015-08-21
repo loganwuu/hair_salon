@@ -7,18 +7,19 @@
         <div class="container">
             <div class="jumbotron">
                 <h1>Logan's Hair Salon</h1>
-                <p>list of our stylists and clients</p>
+                <p>a list of our stylists and thier corresponding clients</p>
 
                 <h1><small>add a stylist</small></h1>
 
                 <form action="/stylists" method="post">
                     <div class="form-group">
-                        <label for="name">Stylist Name:</label>
+                        <label for="name">Name:</label>
                         <input type="text" name="name" id="name" class='form-control'>
                     </div>
                     <button type="submit" class="btn btn-info btn-block">Add Stylist</button>
                 </form>
             </div>
+
             <hr noshade size=4 width=100% align=left>
 
             {% if stylists is not empty %}

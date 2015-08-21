@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>Best Restaurants</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="jumbotron">
+                <h1>
+                    {{ stylist.getName }}<br>
+                    <small>stylist</small>
+                </h1>
+            </div>
+
+            {% if clients is not empty %}
+            <h2><small>Clients:</small></h2>
+              {% for client in clients|sort %}
+                  <ul>
+                      <li>{{ client.getName }}
+                          <a href="/restaurants/{{ restaurant.getId }}"><span class="label label-warning" > Edit</span></a>
+                      </li>
+                  </ul>
+              {% endfor %}
+        {% else %}
+            <h2><small>There's no clients added yet. Add one now!</small></h2>
+        {% endif %}
+
+            <hr noshade size=4 width=100% align=left>
+
+            <h1><small>Add a Client</small></h1>
+            <form action="/clients" method="post">
+                <div class='form-group'>
+                    <input id="stylist_id" type="hidden" name="stylist_id" value="{{ stylist.getId() }}">
+                    <label for="name">Name:</label>
+                    <input id="name" type="text" name="name" required>
+                    <button type="submit" class="btn btn-info">Add Client</button>
+                </div>
+            </form>
+
+            <ul class="nav nav-pills">
+                <li role="presentation">
+                    <form action="/stylists/{{ stylist.getId }}/edit">
+                        <button type="submit" class="btn btn-default">Edit Stylist Name</button>
+                    </form>
+                </li>
+                <li role="presentation">
+                    <form action="/">
+                        <button type="submit" class="btn btn-default">Return Home</button>
+                    </form>
+                </li>
+                <li role="presentation">
+                    <form action="/delete_clients" method="post">
+                        <button type="submit" class="btn btn-danger">Clear Client List</button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>
