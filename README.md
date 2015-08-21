@@ -15,10 +15,10 @@ This application allows salon owners to input their stylists and their correspon
 * Open a web browser and navigate to "localhost:8000".
 
 ## MySQL Commands used
-* CREATE DATABASE hair_salon;
-* USE hair_salon;
-* CREATE TABLE stylists (name VARCHAR(255), id serial PRIMARY KEY);
-* CREATE TABLE clients (name VARCHAR(255), id serial PRIMARY KEY, stylist_id INT);
+* ```CREATE DATABASE hair_salon;```
+* ```USE hair_salon;```
+* ```CREATE TABLE stylists (name VARCHAR(255), id serial PRIMARY KEY);```
+* ```CREATE TABLE clients (name VARCHAR(255), id serial PRIMARY KEY, stylist_id INT);```
 
 ## Technologies Used
 
