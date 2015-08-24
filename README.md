@@ -1,12 +1,12 @@
 # Hair Salon
 
-##### The application allows salon owners to add a list of their stylists and clients who see that stylist. Each client only belongs to a single stylist since stylists work individually. (8/21/15)
+##### The application allows salon owners to add a list of their stylists and clients who see their individual stylists. (8/21/15)
 
 #### By Logan Wu
 
 ## Description
 
-This application allows salon owners to input their stylists and their corresponding clients. The ```stylists``` and ```clients``` tables are stored in the ```hair_salon``` MySQL database.
+This application allows salon owners to input their stylists and corresponding clients. The ```stylists``` and ```clients``` tables are stored in the ```hair_salon``` MySQL database.
 
 ## Setup
 
@@ -21,9 +21,6 @@ This application allows salon owners to input their stylists and their correspon
 * ```USE hair_salon;```
 * ```CREATE TABLE stylists (name VARCHAR(255), id serial PRIMARY KEY);```
 * ```CREATE TABLE clients (name VARCHAR(255), id serial PRIMARY KEY, stylist_id INT);```
-
-## Known bug
-Not able to edit and update Client info as of now.
 
 ## Technologies Used
 
