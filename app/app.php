@@ -45,17 +45,12 @@
         return $app['twig']->render('index.html.twig', array('stylists' => Stylist::getAll()));
     });
 
-        // After running delete all clients function
-    $app->post("/delete_clients", function() use ($app) {
-        Client::deleteAll();
-        return $app['twig']->render('index.html.twig', array('stylists' => Stylist::getAll()));
-    });
-
         // After running delelte all stylists function
     $app->post("/delete_stylists", function() use($app) {
         Stylist::deleteAll();
         return $app['twig']->render('index.html.twig', array('stylists' => Stylist::getAll()));
     });
+
 
     // Stylist page
         // After updating a stylist name function
@@ -71,7 +66,7 @@
         $name = $_POST['name'];
         $client = Client::find($id);
         $client->update($name);
-        $client->save();
+        $stylist_id = $client->getStylistId();
         $stylist = Stylist::find($stylist_id);
         return $app['twig']->render('stylist.html.twig', array('stylist' => $stylist, 'clients'=> $stylist->getClients()));
     });
@@ -90,6 +85,16 @@
         $client->save();
         $stylist = Stylist::find($stylist_id);
         return $app['twig']->render('stylist.html.twig', array('stylist' => $stylist, 'clients' => $stylist->getClients()));
+    });
+
+        // After running delete all clients function
+    $app->post("/delete_clients/{id}", function($id) use ($app) {
+        $stylist = Stylist::find($id);
+        $clients = $stylist->getClients();
+        foreach ($clients as $client) {
+            $client->delete();
+        }
+        return $app['twig']->render('stylist.html.twig', array('stylist' => $stylist, 'clients'=> $stylist->getClients()));
     });
 
     // Stylist name edit page

@@ -15,8 +15,7 @@
             <h1><small>Client(s):</small></h1>
               {% for client in clients|sort %}
                   <ul>
-                      <li><h5><a href="/client/{{ client.getId }}">{{ client.getName }}</a>
-                        </h5>
+                      <li><h5><a href="/clients/{{ client.getId }}/edit">{{ client.getName }}</a></h5>
                       </li>
                   </ul>
               {% endfor %}
@@ -48,7 +47,7 @@
                     </form>
                 </li>
                 <li role="presentation">
-                    <form action="/delete_clients" method="post">
+                    <form action="/delete_clients/{{ stylist.getId }}" method="post">
                         <button type="submit" class="btn btn-danger">Clear Client List</button>
                     </form>
                 </li>
